@@ -2,6 +2,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import 'dotenv/config';
+import cors from cors
 import { bookingRouter } from './routes/all-routes.js';
 
 
@@ -26,6 +27,8 @@ const app = express();
 //     res.json('Same to you');
 // });
 const port = 7080
+
+app.use(cors())
 app.use(express.json())
 app.use(bookingRouter)
 
