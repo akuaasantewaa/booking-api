@@ -2,12 +2,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import 'dotenv/config';
-import cors from cors
+import cors from 'cors'
 import { bookingRouter } from './routes/all-routes.js';
 
 
 // connect to database
-await mongoose.connect('mongodb+srv://booking:booking-api@cluster0.uicjj.mongodb.net/booking-api?retryWrites=true&w=majority&appName=Cluster0');
+await mongoose.connect(process.env.MONGO_URI);
 
 // await mongoose.connect(process.env.MONGO_URL)
 
